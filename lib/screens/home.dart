@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../utils/profileCipper.dart';
+import '../utils/styles.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -24,9 +25,10 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(
-                top: ScreenUtil().setHeight(80),
+                top: ScreenUtil().setHeight(100),
                 left: ScreenUtil().setHeight(40),
                 bottom: ScreenUtil().setHeight(40),
+                right: ScreenUtil().setHeight(40),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,13 +41,23 @@ class _HomePageState extends State<HomePage> {
                     clipper: ProfileClipper(),
                     child: Image.asset(
                       'assets/images/portrait.jpeg',
-                      width: ScreenUtil().setWidth(160),
-                      height: ScreenUtil().setHeight(160),
+                      width: ScreenUtil().setWidth(120),
+                      height: ScreenUtil().setHeight(120),
                       fit: BoxFit.cover,
-                      
                     ),
                   )
                 ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: ScreenUtil().setHeight(60),
+                left: ScreenUtil().setWidth(70),
+                bottom: ScreenUtil().setHeight(105),
+              ),
+              child: Text(
+                "Explore",
+                style: AppStyle.headingText,
               ),
             ),
           ],
