@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nike_concept/widgets/brandSelector.dart';
 import '../utils/profileCipper.dart';
 import '../utils/styles.dart';
 
@@ -60,6 +61,23 @@ class _HomePageState extends State<HomePage> {
                 style: AppStyle.headingText,
               ),
             ),
+            BrandSelector(
+              brands: ['Nike', 'Adidas', 'Convers', 'Vans'],
+            ),
+            SizedBox(
+              height: ScreenUtil().setHeight(50),
+            ),
+            SizedBox(
+                height: ScreenUtil().setHeight(1050),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  physics: BouncingScrollPhysics(),
+                  itemCount: 5,
+                  itemBuilder: (context,index){
+                    Shoes shoes = products[index];
+                    
+                  },
+                ))
           ],
         ),
       ),
